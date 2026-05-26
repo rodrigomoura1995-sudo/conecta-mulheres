@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conecta Mulheres</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:'Poppins',sans-serif;
+            background:#fff7f8;
+            color:#3d3d3d;
+        }
+
+        a{
+            text-decoration:none;
+        }
+
+        .container{
+            width:90%;
+            max-width:1200px;
+            margin:auto;
+        }
+
+        /* HEADER */
+
+        header{
+            background:#fff;
+            padding:18px 0;
+            position:sticky;
+            top:0;
+            z-index:999;
+            box-shadow:0 2px 10px rgba(0,0,0,.05);
+        }
+
+        .navbar{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        .logo{
+            font-size:30px;
+            font-weight:700;
+            color:#de6c8f;
+        }
+
+        .logo span{
+            color:#ff9db6;
+        }
+
+        nav{
+            display:flex;
+            gap:25px;
+        }
+
+        nav a{
+            color:#555;
+            font-size:15px;
+            transition:.3s;
+        }
+
+        nav a:hover{
+            color:#de6c8f;
+        }
+
+        .btn{
+            background:#de6c8f;
+            color:#fff;
+            padding:12px 22px;
+            border-radius:12px;
+            display:inline-block;
+            font-weight:500;
+            transition:.3s;
+        }
+
+        .btn:hover{
+            background:#c85478;
+            transform:translateY(-2px);
+        }
+
+        /* HERO */
+
+        .hero{
+            padding:70px 0;
+        }
+
+        .hero-content{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:40px;
+            align-items:center;
+        }
+
+        .hero-text h1{
+            font-size:52px;
+            line-height:1.2;
+            margin-bottom:20px;
+        }
+
+        .hero-text h1 span{
+            color:#de6c8f;
+        }
+
+        .hero-text p{
+            font-size:18px;
+            color:#666;
+            margin-bottom:30px;
+        }
+
+        .hero-buttons{
+            display:flex;
+            gap:15px;
+            flex-wrap:wrap;
+        }
+
+        .btn-outline{
+            border:2px solid #de6c8f;
+            color:#de6c8f;
+            background:transparent;
+        }
+
+        .btn-outline:hover{
+            background:#de6c8f;
+            color:#fff;
+        }
+
+        .hero-image{
+            position:relative;
+        }
+
+        .hero-image img{
+            width:100%;
+            border-radius:30px;
+        }
+
+        /* FEATURES */
+
+        .features{
+            padding:40px 0;
+        }
+
+        .features-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+            gap:20px;
+        }
+
+        .feature-card{
+            background:#fff;
+            padding:25px;
+            border-radius:22px;
+            text-align:center;
+            box-shadow:0 5px 20px rgba(0,0,0,.05);
+            transition:.3s;
+        }
+
+        .feature-card:hover{
+            transform:translateY(-5px);
+        }
+
+        .feature-card img{
+            width:90px;
+            margin-bottom:15px;
+        }
+
+        .feature-card h3{
+            color:#b84f71;
+            margin-bottom:10px;
+        }
+
+        .feature-card p{
+            font-size:14px;
+            color:#666;
+            margin-bottom:18px;
+        }
+
+        /* VIDEOS */
+
+        .videos{
+            padding:60px 0;
+        }
+
+        .section-title{
+            font-size:32px;
+            margin-bottom:30px;
+            color:#b84f71;
+        }
+
+        .video-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+            gap:25px;
+        }
+
+        .video-card{
+            background:#fff;
+            border-radius:20px;
+            overflow:hidden;
+            box-shadow:0 5px 20px rgba(0,0,0,.05);
+            transition:.3s;
+        }
+
+        .video-card:hover{
+            transform:translateY(-5px);
+        }
+
+        .video-card img{
+            width:100%;
+            height:220px;
+            object-fit:cover;
+        }
+
+        .video-info{
+            padding:20px;
+        }
+
+        .video-info h4{
+            margin-bottom:10px;
+            color:#444;
+        }
+
+        .video-info p{
+            font-size:14px;
+            color:#666;
+        }
+
+        /* FAQ */
+
+        .faq{
+            padding:60px 0;
+        }
+
+        .faq-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+            gap:20px;
+        }
+
+        .faq-item{
+            background:#fff;
+            padding:20px;
+            border-radius:18px;
+            font-weight:500;
+            cursor:pointer;
+            transition:.3s;
+            box-shadow:0 4px 15px rgba(0,0,0,.05);
+        }
+
+        .faq-item:hover{
+            background:#de6c8f;
+            color:#fff;
+        }
+
+        /* FOOTER */
+
+        footer{
+            background:#de6c8f;
+            color:#fff;
+            padding:50px 0;
+            margin-top:60px;
+        }
+
+        .footer-content{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:30px;
+        }
+
+        .footer-title{
+            font-size:22px;
+            margin-bottom:15px;
+        }
+
+        .footer-content p{
+            line-height:1.7;
+            font-size:14px;
+        }
+
+        .socials{
+            margin-top:20px;
+            display:flex;
+            gap:10px;
+        }
+
+        .socials a{
+            width:40px;
+            height:40px;
+            background:#fff;
+            color:#de6c8f;
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-weight:bold;
+        }
+
+        /* RESPONSIVO */
+
+        @media(max-width:900px){
+
+            .hero-content{
+                grid-template-columns:1fr;
+            }
+
+            nav{
+                display:none;
+            }
+
+            .hero-text h1{
+                font-size:38px;
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+        <div class="container navbar">
+
+            <div class="logo">
+                Conecta <span>Mulheres</span>
+            </div>
+
+            <nav>
+                <a href="#">Início</a>
+                <a href="#">Entenda seu corpo</a>
+                <a href="#">Sintomas</a>
+                <a href="#">Prevenção</a>
+                <a href="#">Exames</a>
+                <a href="#">Vídeos</a>
+                <a href="#">Contato</a>
+            </nav>
+
+            <a href="#" class="btn">
+                Agende sua consulta
+            </a>
+
+        </div>
+    </header>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="container hero-content">
+
+            <div class="hero-text">
+
+                <h1>
+                    Informação, acolhimento e autocuidado para a
+                    <span>saúde da mulher.</span>
+                </h1>
+
+                <p>
+                    Uma plataforma educativa criada para promover prevenção,
+                    orientação e qualidade de vida.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#" class="btn">
+                        Explorar conteúdos
+                    </a>
+
+                    <a href="#" class="btn btn-outline">
+                        Acessar vídeos
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1200&auto=format&fit=crop" alt="">
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CARDS -->
+
+    <section class="features">
+
+        <div class="container">
+
+            <div class="features-grid">
+
+                <div class="feature-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3063/3063822.png">
+                    <h3>Entenda seu Corpo</h3>
+                    <p>
+                        Informações sobre o ciclo menstrual, hormônios e saúde íntima.
+                    </p>
+                    <a href="#" class="btn">Saiba mais</a>
+                </div>
+
+                <div class="feature-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2966/2966486.png">
+                    <h3>Sintomas</h3>
+                    <p>
+                        Saiba identificar sinais importantes e possíveis causas.
+                    </p>
+                    <a href="#" class="btn">Saiba mais</a>
+                </div>
+
+                <div class="feature-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2966/2966327.png">
+                    <h3>Prevenção</h3>
+                    <p>
+                        Cuidados diários, vacinação e hábitos saudáveis.
+                    </p>
+                    <a href="#" class="btn">Saiba mais</a>
+                </div>
+
+                <div class="feature-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4320/4320371.png">
+                    <h3>Exames</h3>
+                    <p>
+                        Conheça exames preventivos importantes para sua saúde.
+                    </p>
+                    <a href="#" class="btn">Saiba mais</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- VIDEOS -->
+
+    <section class="videos">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Vídeos em destaque
+            </h2>
+
+            <div class="video-grid">
+
+                <div class="video-card">
+                    <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1200&auto=format&fit=crop">
+                    <div class="video-info">
+                        <h4>O que é exame preventivo?</h4>
+                        <p>
+                            Entenda a importância do papanicolau e da prevenção.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <img src="https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?q=80&w=1200&auto=format&fit=crop">
+                    <div class="video-info">
+                        <h4>Como funciona o ciclo menstrual?</h4>
+                        <p>
+                            Aprenda sobre fases do ciclo menstrual.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop">
+                    <div class="video-info">
+                        <h4>Quando procurar um ginecologista?</h4>
+                        <p>
+                            Conheça os sinais importantes para acompanhamento.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FAQ -->
+
+    <section class="faq">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Dúvidas frequentes
+            </h2>
+
+            <div class="faq-grid">
+
+                <div class="faq-item">
+                    Corrimento é normal?
+                </div>
+
+                <div class="faq-item">
+                    Anticoncepcional atrasa menstruação?
+                </div>
+
+                <div class="faq-item">
+                    Quando fazer preventivo?
+                </div>
+
+                <div class="faq-item">
+                    Dor na relação é comum?
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="container footer-content">
+
+            <div>
+                <div class="footer-title">
+                    Conecta Mulheres
+                </div>
+
+                <p>
+                    Informação, acolhimento e autocuidado para todas as mulheres.
+                </p>
+            </div>
+
+            <div>
+                <div class="footer-title">
+                    Contato
+                </div>
+
+                <p>
+                    contato@conectamulheres.com.br
+                    <br><br>
+                    (11) 99999-9999
+                </p>
+            </div>
+
+            <div>
+                <div class="footer-title">
+                    Redes sociais
+                </div>
+
+                <div class="socials">
+                    <a href="#">F</a>
+                    <a href="#">I</a>
+                    <a href="#">Y</a>
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script>
+
+        // FAQ interação
+
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+
+            item.addEventListener('click', () => {
+
+                alert(item.innerText);
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
