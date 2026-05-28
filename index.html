@@ -143,6 +143,32 @@
             border-radius:30px;
         }
 
+        /* SOBRE O PROJETO */
+
+        .sobre{
+            padding: 60px 0;
+        }
+
+        .sobre-box{
+            background: #fff;
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,.05);
+            text-align: center;
+        }
+
+        .sobre-box h2{
+            color: #b84f71;
+            margin-bottom: 20px;
+            font-size: 32px;
+        }
+
+        .sobre-box p{
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
         /* FEATURES */
 
         .features{
@@ -261,6 +287,54 @@
             color:#fff;
         }
 
+        /* PARTICIPANTE*/
+
+        .participantes{
+            padding: 60px 0;
+        }
+
+        .participantes-box{
+            background:#fff;
+            padding:40px;
+            border-radius:25px;
+            box-shadow:0 5px 20px rgba(0,0,0,.05);
+        }
+
+        .participantes-texto{
+            text-align:center;
+            color:#666;
+            line-height:1.8;
+            margin-bottom:35px;
+        }
+
+        .lista-participantes{
+            display:grid;
+            grid-template-columns:repeat(2,1fr);
+            gap:18px;
+        }
+
+        .participante-item{
+            background:#fff7f8;
+            padding:18px 20px;
+            border-radius:16px;
+            border-left:5px solid #de6c8f;
+            font-weight:500;
+            color:#555;
+            transition:.3s;
+        }
+
+        .participante-item:hover{
+            transform:translateX(5px);
+        }
+
+        @media(max-width:768px){
+
+            .lista-participantes{
+                grid-template-columns:1fr;
+            }
+
+        }
+
         /* FOOTER */
 
         footer{
@@ -322,6 +396,87 @@
 
         }
 
+        /* MODAL */
+
+        .modal{
+            display:none;
+            position:fixed;
+            z-index:9999;
+            left:0;
+            top:0;
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,.5);
+            backdrop-filter:blur(4px);
+            overflow-y:auto;
+            padding:20px 0;
+        }
+
+        .modal-content{
+            background:#fff;
+            width:90%;
+            max-width:500px;
+            margin:40px auto;
+            padding:35px;
+            border-radius:25px;
+            position:relative;
+            animation:modalAnim .3s ease;
+            box-shadow:0 10px 40px rgba(0,0,0,.15);
+            max-height:85vh;
+            overflow-y:auto;
+        }
+
+        @keyframes modalAnim{
+
+            from{
+                opacity:0;
+                transform:translateY(-20px);
+            }
+
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+
+        }
+
+        .fechar{
+            position:absolute;
+            top:15px;
+            right:20px;
+            font-size:28px;
+            cursor:pointer;
+            color:#999;
+        }
+
+        .modal-content h2{
+            color:#b84f71;
+            margin-bottom:20px;
+        }
+
+        .modal-content p{
+            color:#666;
+            line-height:1.8;
+        }
+
+        .info-clinica{
+            background:#fff7f8;
+            padding:20px;
+            border-radius:18px;
+            margin-top:20px;
+        }
+
+        .info-clinica h3{
+            color:#de6c8f;
+            margin-bottom:10px;
+        }
+
+        .info-clinica a{
+            color:#444;
+            font-weight:600;
+            font-size:18px;
+        }
+
     </style>
 </head>
 <body>
@@ -345,7 +500,7 @@
                 <a href="#">Contato</a>
             </nav>
 
-            <a href="#" class="btn">
+            <a href="#" class="btn" id="abrirModal">
                 Agende sua consulta
             </a>
 
@@ -366,8 +521,7 @@
                 </h1>
 
                 <p>
-                    Uma plataforma educativa criada para promover prevenção,
-                    orientação e qualidade de vida.
+                    Plataforma educativa voltada à saúde da mulher, com conteúdos acessíveis e confiáveis sobre prevenção, autocuidado e bem-estar feminino.
                 </p>
 
                 <div class="hero-buttons">
@@ -386,6 +540,24 @@
 
             <div class="hero-image">
                 <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1200&auto=format&fit=crop" alt="">
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="sobre">
+
+        <div class="container">
+
+            <div class="sobre-box">
+
+                <h2>Sobre o Projeto</h2>
+
+                <p>
+                    O Conecta Mulheres é uma plataforma educativa criada por estudantes da área da saúde com o objetivo de promover informação acessível sobre saúde feminina, prevenção e autocuidado.
+                </p>
+
             </div>
 
         </div>
@@ -524,6 +696,64 @@
 
     </section>
 
+    <!-- PARTICIPANTE -->
+
+    <section class="participantes">
+
+        <div class="container">
+
+            <div class="participantes-box">
+
+                <h2 class="section-title">
+                    Participantes
+                </h2>
+
+                <p class="participantes-texto">
+                    O projeto conta com participação de estudantes da área da saúde e colaboradores convidados, promovendo educação em saúde de forma acessível e humanizada.
+                </p>
+
+                <div class="lista-participantes">
+
+                    <div class="participante-item">
+                        Gisele Reis dos Santos
+                    </div>
+
+                    <div class="participante-item">
+                        Patrynne de Souza Figliuolo
+                    </div>
+
+                    <div class="participante-item">
+                        Raquel Beatriz da Silva Fernandes
+                    </div>
+
+                    <div class="participante-item">
+                        Mariana Lisboa da Silva
+                    </div>
+
+                    <div class="participante-item">
+                        Luma Costa Nunes
+                    </div>
+
+                    <div class="participante-item">
+                        Anna Gabriela Santos dos Santos
+                    </div>
+
+                    <div class="participante-item">
+                        Bianca de Jesus Adorno
+                    </div>
+
+                    <div class="participante-item">
+                        Renata Lopes Crispim
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>>
+
     <!-- FOOTER -->
 
     <footer>
@@ -568,6 +798,52 @@
 
     </footer>
 
+    <!-- MODAL -->
+
+    <div class="modal" id="modalConsulta">
+
+        <div class="modal-content">
+
+            <span class="fechar">&times;</span>
+
+            <h2>Agendamento de Consulta</h2>
+
+            <p>
+                Entre em contato com a Clínica Integrada de Saúde (CIS)
+                para realizar seu agendamento.
+            </p>
+
+            <div class="info-clinica">
+
+                <h3>Telefone / WhatsApp</h3>
+
+                <a href="https://wa.me/557132738512" target="_blank">
+                    (71) 3273-8512
+                </a>
+
+            </div>
+
+            <div class="info-clinica">
+
+                <h3>Endereço</h3>
+
+                <p>
+                    CIS - Clínica Integrada de Saúde Unifacs
+                    <br><br>
+                    Avenida Luís Viana Filho, 3100 - 3146,
+                    Edifício Unifacs
+                    <br>
+                    CEP: 41.741-590
+                    <br>
+                    Salvador - BA
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
     <script>
 
         // FAQ interação
@@ -581,6 +857,36 @@
                 alert(item.innerText);
 
             });
+
+        });
+
+        // Modal agendar consulta
+
+        const modal = document.getElementById('modalConsulta');
+        const abrirModal = document.getElementById('abrirModal');
+        const fechar = document.querySelector('.fechar');
+
+        abrirModal.addEventListener('click', function(e){
+
+            e.preventDefault();
+
+            modal.style.display = 'block';
+
+        });
+
+        fechar.addEventListener('click', function(){
+
+            modal.style.display = 'none';
+
+        });
+
+        window.addEventListener('click', function(e){
+
+            if(e.target == modal){
+
+                modal.style.display = 'none';
+
+            }
 
         });
 
