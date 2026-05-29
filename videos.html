@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vídeos Educativos</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:'Poppins',sans-serif;
+            background:#fff7f8;
+            color:#444;
+        }
+
+        .container{
+            width:90%;
+            max-width:1200px;
+            margin:auto;
+        }
+
+        header{
+            background:#fff;
+            padding:20px 0;
+            box-shadow:0 2px 10px rgba(0,0,0,.05);
+        }
+
+        .topo{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        .logo{
+            font-size:30px;
+            font-weight:700;
+            color:#de6c8f;
+        }
+
+        .logo span{
+            color:#ff9db6;
+        }
+
+        .btn-voltar{
+            background:#de6c8f;
+            color:#fff;
+            padding:12px 20px;
+            border-radius:12px;
+            text-decoration:none;
+        }
+
+        .videos{
+            padding:60px 0;
+        }
+
+        .titulo{
+            text-align:center;
+            margin-bottom:40px;
+        }
+
+        .titulo h1{
+            color:#b84f71;
+            margin-bottom:10px;
+        }
+
+        .videos-grid{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:25px;
+        }
+
+        .video-card{
+            background:#fff;
+            border-radius:22px;
+            overflow:hidden;
+            box-shadow:0 5px 20px rgba(0,0,0,.05);
+            transition:.3s;
+        }
+
+        .video-card:hover{
+            transform:translateY(-5px);
+        }
+
+        .video-card iframe{
+            width:100%;
+            height:220px;
+            border:none;
+        }
+
+        .video-info{
+            padding:20px;
+        }
+
+        .video-info h3{
+            margin-bottom:10px;
+            color:#b84f71;
+        }
+
+        .video-info p{
+            color:#666;
+            line-height:1.7;
+            font-size:14px;
+        }
+
+        .video-card video{
+            width:100%;
+            height:420px;
+            object-fit:contain;
+            background:#000;
+            border-radius:20px 20px 0 0;
+        }
+
+        @media(max-width:768px){
+
+            .video-card video{
+                height:500px;
+            }
+
+        }
+
+        @media(max-width:900px){
+
+            .videos-grid{
+                grid-template-columns:repeat(2,1fr);
+            }
+
+        }
+
+        @media(max-width:600px){
+
+            .videos-grid{
+                grid-template-columns:1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+<header>
+
+    <div class="container topo">
+
+         <div class="logo">
+            Conecta <span>Mulheres</span>
+        </div>
+
+        <a href="index.html" class="btn-voltar">
+            Voltar
+        </a>
+
+    </div>
+
+</header>
+
+<section class="videos">
+
+    <div class="container">
+
+        <div class="titulo">
+
+            <h1>Vídeos Educativos</h1>
+
+            <p>
+                Conteúdos educativos sobre saúde da mulher, prevenção e autocuidado.
+            </p>
+
+        </div>
+
+        <div class="videos-grid">
+
+            <div class="video-card">
+
+                <video controls>
+
+                    <source src="videos/Corrimento Vaginal.mp4" type="video/mp4">
+
+                </video>
+
+                <div class="video-info">
+
+                    <h3>Corrimento vaginal</h3>
+
+                    <p>
+                        o que é normal e o que é sinal de alerta.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="video-card">
+
+                <video controls>
+
+                    <source src="videos/Candidíase.mp4" type="video/mp4">
+
+                </video>
+
+                <div class="video-info">
+
+                    <h3>Candidíase</h3>
+
+                    <p>
+                        causas, sintomas e prevenção.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="video-card">
+
+                <video controls>
+
+                    <source src="videos/Higiene intima.mp4" type="video/mp4">
+
+                </video>
+
+                <div class="video-info">
+
+                    <h3>Higiene íntima</h3>
+
+                    <p>
+                        higiene íntima correta no dia a dia.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="video-card">
+
+                <video controls>
+
+                    <source src="videos/Mau Cheiro.mp4" type="video/mp4">
+
+                </video>
+
+                <div class="video-info">
+
+                    <h3>Mau cheiro na região íntima</h3>
+
+                    <p>
+                        possíveis causas.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="video-card">
+
+                <video controls>
+
+                    <source src="videos/colica menstrual.mp4" type="video/mp4">
+
+                </video>
+
+                <div class="video-info">
+
+                    <h3>Cólica menstrual</h3>
+
+                    <p>
+                        quando investigar?
+                    </p>
+
+                </div>
+
+            </div>
+            
+            <div class="video-card">
+
+                <video controls>
+
+                    <source src="videos/Menstruação irregular.mp4" type="video/mp4">
+
+                </video>
+
+                <div class="video-info">
+
+                    <h3>Menstruação irregular</h3>
+
+                    <p>
+                        o que pode significar?
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="video-card">
+
+                <video controls>
+
+                    <source src="videos/exame preventivo.mp4" type="video/mp4">
+
+                </video>
+
+                <div class="video-info">
+
+                    <h3>Importância do exame preventivo / Papanicolau</h3>
+
+                    <p>
+                        saiba mais.
+                    </p>
+
+                </div>
+
+            </div>
+            
+            <div class="video-card">
+
+                <video controls>
+
+                    <source src="videos/ISTs.mp4" type="video/mp4">
+
+                </video>
+
+                <div class="video-info">
+
+                    <h3>Infecção Sexualmente Transmissível</h3>
+
+                    <p>
+                        ISTs mais frequentes em mulheres.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="video-card">
+
+                <video controls>
+
+                    <source src="videos/saude intima.mp4" type="video/mp4">
+
+                </video>
+
+                <div class="video-info">
+
+                    <h3>Saúde íntima</h3>
+
+                    <p>
+                        conhecimento da saúde íntima
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="video-card">
+
+                <video controls>
+
+                    <source src="videos/estresse.mp4" type="video/mp4">
+
+                </video>
+
+                <div class="video-info">
+
+                    <h3>Estresse e Ansiedade</h3>
+
+                    <p>
+                         como o estresse e a ansiedade afetam a saude íntima feminina
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+    const videos = document.querySelectorAll('video');
+
+    videos.forEach(video => {
+
+        video.addEventListener('play', () => {
+
+            videos.forEach(otherVideo => {
+
+                if(otherVideo !== video){
+
+                    otherVideo.pause();
+
+                }
+
+            });
+
+        });
+
+    });
+</script>
+
+</body>
+</html>
