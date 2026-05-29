@@ -266,25 +266,56 @@
             padding:60px 0;
         }
 
-        .faq-grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+        .faq-container{
+            display:flex;
+            flex-direction:column;
             gap:20px;
         }
 
         .faq-item{
             background:#fff;
-            padding:20px;
-            border-radius:18px;
-            font-weight:500;
-            cursor:pointer;
-            transition:.3s;
-            box-shadow:0 4px 15px rgba(0,0,0,.05);
+            border-radius:20px;
+            overflow:hidden;
+            box-shadow:0 5px 20px rgba(0,0,0,.05);
         }
 
-        .faq-item:hover{
-            background:#de6c8f;
-            color:#fff;
+        .faq-question{
+            width:100%;
+            background:none;
+            border:none;
+            padding:22px 25px;
+            font-size:17px;
+            font-weight:600;
+            color:#b84f71;
+            cursor:pointer;
+
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+
+            transition:.3s;
+        }
+
+        .faq-question:hover{
+            background:#fff7f8;
+        }
+
+        .faq-question span{
+            font-size:24px;
+            transition:.3s;
+        }
+
+        .faq-answer{
+            max-height:0;
+            overflow:hidden;
+            transition:max-height .4s ease;
+            background:#fff;
+        }
+
+        .faq-answer p{
+            padding:0 25px 25px;
+            color:#666;
+            line-height:1.8;
         }
 
         /* PARTICIPANTE*/
@@ -345,37 +376,55 @@
         }
 
         .footer-content{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-            gap:30px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            gap:40px;
+            flex-wrap:wrap;
+        }
+
+        .footer-info{
+            max-width:500px;
         }
 
         .footer-title{
-            font-size:22px;
+            font-size:28px;
+            font-weight:700;
             margin-bottom:15px;
         }
 
-        .footer-content p{
-            line-height:1.7;
-            font-size:14px;
+        .footer-info p{
+            line-height:1.8;
+            font-size:15px;
         }
 
-        .socials{
-            margin-top:20px;
-            display:flex;
-            gap:10px;
+        .footer-equipe{
+            text-align:center;
         }
 
-        .socials a{
-            width:40px;
-            height:40px;
-            background:#fff;
-            color:#de6c8f;
+        .footer-equipe img{
+            height:140px;
+            object-fit:cover;
             border-radius:50%;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            font-weight:bold;
+            border:4px solid rgba(255,255,255,.4);
+            margin-bottom:12px;
+            box-shadow:0 5px 20px rgba(0,0,0,.15);
+        }
+
+        .footer-equipe span{
+            display:block;
+            font-size:14px;
+            font-weight:500;
+        }
+
+        /* RESPONSIVO */
+
+        @media(max-width:768px){
+
+            .footer-content{
+                flex-direction:column;
+                text-align:center;
+            }
         }
 
         /* RESPONSIVO */
@@ -491,13 +540,13 @@
             </div>
 
             <nav>
-                <a href="#">Início</a>
-                <a href="#">Entenda seu corpo</a>
+                <a href="index.html">Início</a>
+                <!-- <a href="#">Entenda seu corpo</a>
                 <a href="#">Sintomas</a>
                 <a href="#">Prevenção</a>
-                <a href="#">Exames</a>
-                <a href="#">Vídeos</a>
-                <a href="#">Contato</a>
+                <a href="#">Exames</a> -->
+                <a href="videos.html">Vídeos</a>
+                <!-- <a href="#">Contato</a> -->
             </nav>
 
             <a href="#" class="btn" id="abrirModal">
@@ -526,11 +575,11 @@
 
                 <div class="hero-buttons">
 
-                    <a href="#" class="btn">
+                    <a href="#cards" class="btn">
                         Explorar conteúdos
                     </a>
 
-                    <a href="#" class="btn btn-outline">
+                    <a href="videos.html" class="btn btn-outline">
                         Acessar vídeos
                     </a>
 
@@ -539,12 +588,14 @@
             </div>
 
             <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1200&auto=format&fit=crop" alt="">
+                <img src="img/capa.jpeg" alt="">
             </div>
 
         </div>
 
     </section>
+
+        <!-- SOBRE O PROJETO -->
 
     <section class="sobre">
 
@@ -557,138 +608,6 @@
                 <p>
                     O Conecta Mulheres é uma plataforma educativa criada por estudantes da área da saúde com o objetivo de promover informação acessível sobre saúde feminina, prevenção e autocuidado.
                 </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- CARDS -->
-
-    <section class="features">
-
-        <div class="container">
-
-            <div class="features-grid">
-
-                <div class="feature-card">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3063/3063822.png">
-                    <h3>Entenda seu Corpo</h3>
-                    <p>
-                        Informações sobre o ciclo menstrual, hormônios e saúde íntima.
-                    </p>
-                    <a href="#" class="btn">Saiba mais</a>
-                </div>
-
-                <div class="feature-card">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2966/2966486.png">
-                    <h3>Sintomas</h3>
-                    <p>
-                        Saiba identificar sinais importantes e possíveis causas.
-                    </p>
-                    <a href="#" class="btn">Saiba mais</a>
-                </div>
-
-                <div class="feature-card">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2966/2966327.png">
-                    <h3>Prevenção</h3>
-                    <p>
-                        Cuidados diários, vacinação e hábitos saudáveis.
-                    </p>
-                    <a href="#" class="btn">Saiba mais</a>
-                </div>
-
-                <div class="feature-card">
-                    <img src="https://cdn-icons-png.flaticon.com/512/4320/4320371.png">
-                    <h3>Exames</h3>
-                    <p>
-                        Conheça exames preventivos importantes para sua saúde.
-                    </p>
-                    <a href="#" class="btn">Saiba mais</a>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- VIDEOS -->
-
-    <section class="videos">
-
-        <div class="container">
-
-            <h2 class="section-title">
-                Vídeos em destaque
-            </h2>
-
-            <div class="video-grid">
-
-                <div class="video-card">
-                    <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1200&auto=format&fit=crop">
-                    <div class="video-info">
-                        <h4>O que é exame preventivo?</h4>
-                        <p>
-                            Entenda a importância do papanicolau e da prevenção.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <img src="https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?q=80&w=1200&auto=format&fit=crop">
-                    <div class="video-info">
-                        <h4>Como funciona o ciclo menstrual?</h4>
-                        <p>
-                            Aprenda sobre fases do ciclo menstrual.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop">
-                    <div class="video-info">
-                        <h4>Quando procurar um ginecologista?</h4>
-                        <p>
-                            Conheça os sinais importantes para acompanhamento.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- FAQ -->
-
-    <section class="faq">
-
-        <div class="container">
-
-            <h2 class="section-title">
-                Dúvidas frequentes
-            </h2>
-
-            <div class="faq-grid">
-
-                <div class="faq-item">
-                    Corrimento é normal?
-                </div>
-
-                <div class="faq-item">
-                    Anticoncepcional atrasa menstruação?
-                </div>
-
-                <div class="faq-item">
-                    Quando fazer preventivo?
-                </div>
-
-                <div class="faq-item">
-                    Dor na relação é comum?
-                </div>
 
             </div>
 
@@ -754,13 +673,208 @@
 
     </section>>
 
+    <!-- CARDS -->
+
+    <section class="features" id="cards">
+
+        <div class="container">
+
+            <div class="features-grid">
+
+                <div class="feature-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3063/3063822.png">
+                    <h3>Entenda seu Corpo</h3>
+                    <p>
+                        Informações sobre o ciclo menstrual, hormônios e saúde íntima.
+                    </p>
+                    <a href="videos.html" class="btn">Saiba mais</a>
+                </div>
+
+                <div class="feature-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2966/2966486.png">
+                    <h3>Sintomas</h3>
+                    <p>
+                        Saiba identificar sinais importantes e possíveis causas.
+                    </p>
+                    <a href="videos.html" class="btn">Saiba mais</a>
+                </div>
+
+                <div class="feature-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2966/2966327.png">
+                    <h3>Prevenção</h3>
+                    <p>
+                        Cuidados diários, vacinação e hábitos saudáveis.
+                    </p>
+                    <a href="videos.html" class="btn">Saiba mais</a>
+                </div>
+
+                <div class="feature-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4320/4320371.png">
+                    <h3>Exames</h3>
+                    <p>
+                        Conheça exames preventivos importantes para sua saúde.
+                    </p>
+                    <a href="videos.html" class="btn">Saiba mais</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- VIDEOS -->
+
+    <!-- <section class="videos">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Vídeos em destaque
+            </h2>
+
+            <div class="video-grid">
+
+                <div class="video-card">
+                    <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1200&auto=format&fit=crop">
+                    <div class="video-info">
+                        <h4>O que é exame preventivo?</h4>
+                        <p>
+                            Entenda a importância do papanicolau e da prevenção.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <img src="https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?q=80&w=1200&auto=format&fit=crop">
+                    <div class="video-info">
+                        <h4>Como funciona o ciclo menstrual?</h4>
+                        <p>
+                            Aprenda sobre fases do ciclo menstrual.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop">
+                    <div class="video-info">
+                        <h4>Quando procurar um ginecologista?</h4>
+                        <p>
+                            Conheça os sinais importantes para acompanhamento.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section> -->
+
+    <!-- FAQ -->
+
+    <section class="faq">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Dúvidas Frequentes
+            </h2>
+
+            <div class="faq-container">
+
+                <!-- ITEM -->
+
+                <div class="faq-item">
+
+                    <button class="faq-question">
+                        TPM e alterações hormonais femininas
+                        <span>+</span>
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Você já percebeu mudanças no humor, no corpo ou até na energia alguns dias antes da menstruação? Isso acontece por causa das alterações hormonais naturais do ciclo menstrual e é mais comum do que parece. A TPM (Tensão Pré-Menstrual) é um conjunto de sintomas físicos, emocionais e comportamentais que podem surgir dias antes da menstruação. Essas mudanças acontecem principalmente por variações dos hormônios femininos, como estrogênio e progesterona. Entre os sintomas mais comuns da TPM estão: irritabilidade, alterações de humor, sensibilidade emocional, ansiedade, tristeza, inchaço, retenção de líquido, dor de cabeça, cólicas, cansaço excessivo, sensibilidade nas mamas e aumento do apetite. Cada mulher pode sentir a TPM de uma forma diferente. Algumas apresentam sintomas leves, enquanto outras têm impactos maiores na rotina e no bem-estar. Além da TPM, as alterações hormonais femininas podem acontecer em diferentes fases da vida, comoadolescência, gravidez, pós-parto e menopausa. Manter hábitos saudáveis, como alimentação equilibrada, atividade física, sono adequado e redução do estresse, pode ajudar no controle dos sintomas. Quando os sintomas se tornam intensos, é importante buscar orientação médica.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- ITEM -->
+
+                <div class="faq-item">
+
+                    <button class="faq-question">
+                        HPV: prevenção, vacina e cuidados
+                        <span>+</span>
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            O HPV é uma infecção sexualmente transmissível muito comum, que pode causar verrugas genitais e, em alguns casos, câncer. A principal forma de prevenção é a vacina contra o HPV, além do uso de preservativo em todas as relações sexuais e da realização de exames preventivos regularmente. A vacina é segura, eficaz e ajuda a proteger contra os tipos de HPV mais perigosos. Mesmo quem já iniciou a vida sexual pode se beneficiar dela. Também é importante manter acompanhamento médico e procurar ajuda ao notar qualquer alteração na região íntima. Informação e prevenção são essenciais para cuidar da saúde.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- ITEM -->
+
+                <div class="faq-item">
+
+                    <button class="faq-question">
+                        Saúde íntima na gravidez e no pós-parto
+                        <span>+</span>
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Durante a gravidez e o pós-parto, o corpo feminino passa por diversas alterações hormonais e físicas, tornando os cuidados com a saúde íntima ainda mais importantes. É comum haver aumento do corrimento, maior sensibilidade na região íntima e mudanças na flora vaginal. Por isso, manter uma boa higiene, usar roupas leves e evitar produtos irritantes ajuda a prevenir infecções e desconfortos. No pós-parto, o corpo precisa de tempo para se recuperar. Respeitar o período de recuperação, manter acompanhamento médico e observar sinais como dor, mau cheiro, coceira ou sangramento excessivo é fundamental. Cuidar da saúde íntima nessa fase é também cuidar do bem-estar, da autoestima e da saúde da mulher.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- ITEM -->
+
+                <div class="faq-item">
+
+                    <button class="faq-question">
+                        Menopausa: sintomas e cuidados com a saúde feminina
+                        <span>+</span>
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            A menopausa é uma fase natural da vida da mulher, marcada pelo fim da menstruação e pelas alterações hormonais, principalmente na produção de estrogênio. Durante esse período, é comum surgirem sintomas como ondas de calor, alterações de humor, insônia, ressecamento íntimo, cansaço e diminuição da libido. Cada mulher vivencia essa fase de uma maneira diferente. Alguns cuidados podem ajudar a melhorar a qualidade de vida, como manter uma alimentação equilibrada, praticar atividade física, dormir bem, cuidar da saúde emocional e realizar acompanhamento médico regularmente. A menopausa não representa o fim da feminilidade, mas uma nova fase que merece atenção, acolhimento e cuidado com a saúde física e emocional.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
     <!-- FOOTER -->
 
     <footer>
 
         <div class="container footer-content">
 
-            <div>
+            <!-- TEXTO -->
+
+            <div class="footer-info">
+
                 <div class="footer-title">
                     Conecta Mulheres
                 </div>
@@ -768,30 +882,19 @@
                 <p>
                     Informação, acolhimento e autocuidado para todas as mulheres.
                 </p>
+
             </div>
 
-            <div>
-                <div class="footer-title">
-                    Contato
-                </div>
+            <!-- EQUIPE -->
 
-                <p>
-                    contato@conectamulheres.com.br
-                    <br><br>
-                    (11) 99999-9999
-                </p>
-            </div>
+            <div class="footer-equipe">
 
-            <div>
-                <div class="footer-title">
-                    Redes sociais
-                </div>
+                <img src="img/estudantes.jpeg" alt="Equipe do Projeto">
 
-                <div class="socials">
-                    <a href="#">F</a>
-                    <a href="#">I</a>
-                    <a href="#">Y</a>
-                </div>
+                <span>
+                    Equipe criadora dos conteúdos do site
+                </span>
+
             </div>
 
         </div>
@@ -847,14 +950,49 @@
     <script>
 
         // FAQ interação
+        const faqQuestions = document.querySelectorAll('.faq-question');
 
-        const faqItems = document.querySelectorAll('.faq-item');
+        faqQuestions.forEach(question => {
 
-        faqItems.forEach(item => {
+            question.addEventListener('click', () => {
 
-            item.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const answer = faqItem.querySelector('.faq-answer');
+                const icon = question.querySelector('span');
 
-                alert(item.innerText);
+                // Fecha outros
+                document.querySelectorAll('.faq-answer').forEach(item => {
+
+                    if(item !== answer){
+
+                        item.style.maxHeight = null;
+
+                    }
+
+                });
+
+                document.querySelectorAll('.faq-question span').forEach(item => {
+
+                    if(item !== icon){
+
+                        item.innerHTML = '+';
+
+                    }
+
+                });
+
+                // Toggle atual
+                if(answer.style.maxHeight){
+
+                    answer.style.maxHeight = null;
+                    icon.innerHTML = '+';
+
+                }else{
+
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    icon.innerHTML = '−';
+
+                }
 
             });
 
@@ -891,6 +1029,6 @@
         });
 
     </script>
-
+    
 </body>
 </html>
